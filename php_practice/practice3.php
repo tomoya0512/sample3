@@ -2,46 +2,46 @@
 
 //1問目
 function double($number){
-    return $number*2;
+    return $number * 2;
 }
 echo double(5);
 echo "\n";
 
 //2問目
-function add($a,$b){
-    return $a+$b;
+function add($a, $b){
+    return $a + $b;
 }
-echo add(4,6);
+echo add(4, 6);
 echo "\n";
 
 //3問目
-    function mul($arr){
-  $total=1;
+function mul($arr){
+    $total = 1;
     foreach ($arr as $c){
-  $total *= $c;
+        $total *= $c;
     }
     return $total;
-    }
-    echo mul(array(1,3,5,7,9));
+}
+echo mul(array(1, 3, 5, 7, 9));
 echo "\n";
 
- function mult(){
-     $arr = array(1,3,5,7,9);
-     echo array_product($arr);
+function mult(){
+    $arr = array(1, 3, 5, 7, 9);
+    echo array_product($arr);
  }
- echo mult(array(1,3,5,7,9));
- echo "\n";
+echo mult(array(1, 3, 5, 7, 9));
+echo "\n";
 
 
 //4問目
 
-  $arr = array(4,3,7,8,2);
- function max_array($arr){
+$arr = array(4 ,3 ,7 ,8 ,2);
+function max_array($arr){
 // とりあえず配列の最初の要素を一番大きい値とする
- $max_number = $arr[0];
- foreach($arr as $a){
- if($max_number<$a){
-     $max_number=$a;
+$max_number = $arr[0];
+foreach($arr as $a){
+if($max_number < $a){
+    $max_number = $a;
  }
  }
  return $max_number;
@@ -52,8 +52,8 @@ echo "\n";
  
  //5問目
  //strip_tags
- $str = "<h1>strip_tags関数</h1>"
-  . "<p>タグ取り除く</p>";
+$str = "<h1>strip_tags関数</h1>"
+. "<p>タグ取り除く</p>";
 echo strip_tags($str) ;
 echo "\n";
 
@@ -71,7 +71,7 @@ print_r($result);
 echo "\n";
 
 //time, mktime
-  $time = mktime(0, 0, 10, 27, 10, 2021);
-  var_dump(date('Y年m月d日h時i分s秒', $time));
-  echo "\n";
+$time = mktime(0, 0, 10, 27, 10, 2021);
+var_dump(date('Y年m月d日h時i分s秒', $time));
+echo "\n";
 ?>
