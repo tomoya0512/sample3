@@ -28,7 +28,7 @@ echo "\n";
 function mult(){
     $arr = array(1, 3, 5, 7, 9);
     echo array_product($arr);
- }
+}
 echo mult(array(1, 3, 5, 7, 9));
 echo "\n";
 
@@ -38,16 +38,16 @@ echo "\n";
 $arr = array(4 ,3 ,7 ,8 ,2);
 function max_array($arr){
 // とりあえず配列の最初の要素を一番大きい値とする
-$max_number = $arr[0];
-foreach($arr as $a){
-if($max_number < $a){
-    $max_number = $a;
- }
- }
- return $max_number;
- }
- echo max_array($arr);
- echo "\n";
+    $max_number = $arr[0];
+    foreach($arr as $a){
+        if($max_number < $a){
+            $max_number = $a;
+        }
+    }
+    return $max_number;
+}
+echo max_array($arr);
+echo "\n";
 
  
  //5問目
