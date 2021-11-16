@@ -13,9 +13,9 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
 
-    public function create()
+    public function create(Request $request)
     {
-              // 以下を追記
+      //以下を追記
       // Varidationを行う
       $this->validate($request, Profile::$rules);
       
