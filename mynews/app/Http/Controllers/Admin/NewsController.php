@@ -61,6 +61,8 @@ class NewsController extends Controller
       }
       return view('admin.news.edit', ['news_form' => $news]);
     }
+    
+    
     public function update(Request $request){
       // Validationをかける
       $this->validate($request, News::$rules);
@@ -84,6 +86,7 @@ class NewsController extends Controller
     $news->fill($news_form)->save();
     return redirect('admin/news');
     }
+    
     
     public function delete(Request $request){
       // 該当するNews Modelを取得
