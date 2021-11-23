@@ -53,7 +53,7 @@ class ProfileController extends Controller
         if (empty($profile)) {
           abort(404);
         }
-        return view('admin.profile.edit', ['profile_form' => $profle]);
+        return view('admin.profile.edit', ['profile_form' => $profile]);
     }
 
 
