@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
 
+use App\Background;
+
+use Carbon\Carbon;
+
 class ProfileController extends Controller
 {
     public function add()
@@ -38,7 +42,7 @@ class ProfileController extends Controller
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
         // 検索されたら検索結果を取得する
-        $posts = Profile::where('title', $cond_title)->get();
+        $posts = Profile::where('name', $cond_title)->get();
       } else {
 
         $posts = Profile::all();
@@ -70,6 +74,21 @@ class ProfileController extends Controller
     unset($profile_form['_token']);
     // 該当するデータを上書きして保存する
     $profile->fill($profile_form)->save();
+    
+    $background = new Background();
+    $background->profile_id = $profile->id;
+    $background->edited_at = Carbon::now();
+    $background->save();
+    
     return redirect('admin/profile');
     }
+    
+    public function delete(Request $request){
+
+      $profile= Profile::find($request->id);
+      // 削除する
+      $profile->delete();
+      return redirect('admin/profile/');
+    }
+    
 }
