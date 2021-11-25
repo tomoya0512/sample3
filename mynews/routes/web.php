@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');
     Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
     
+    
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
     Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
@@ -35,3 +36,4 @@ Route::group(['prefix' => 'admin'], function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'NewsController@index');
