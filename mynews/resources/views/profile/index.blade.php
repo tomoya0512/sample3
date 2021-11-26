@@ -2,26 +2,23 @@
 
 @section('content')
     <div class="container">
+        <h1>自己紹介一覧</h1>
         <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="caption mx-auto">
-                                <div class="title p-2">
-                                    <h1>{{ str_limit($headline->name, 20) }}</h1>
-                                </div>
-                            </div>
+                            <p class="body mx-auto">名前：　{{ str_limit($headline->name, 20) }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ str_limit($headline->gender, 50) }}</p>
+                            <p class="body mx-auto">年齢：　{{ str_limit($headline->gender, 20) }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ str_limit($headline->hobby, 200) }}</p>
+                            <p class="body mx-auto">趣味：　{{ str_limit($headline->hobby, 200) }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ str_limit($headline->introduction, 200) }}</p>
+                            <p class="body mx-auto">一言：　{{ str_limit($headline->introduction, 200) }}</p>
                         </div>
                     </div>
                 </div>
@@ -38,16 +35,16 @@
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
                                 <div class="title">
-                                    {{ str_limit($post->name, 20) }}
+                                    名前：　　{{ str_limit($post->name, 20) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->gender, 6) }}
+                                    性別：　{{ str_limit($post->gender, 6) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->hobby, 1000) }}
+                                    趣味：　{{ str_limit($post->hobby, 1000) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->introduction, 1000) }}
+                                    一言：　{{ str_limit($post->introduction, 1000) }}
                                 </div>
                             </div>
                         </div>
